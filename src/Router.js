@@ -8,6 +8,7 @@ import Talk_Room from './pages/Talk_Room';
 import FlashMessage from 'react-native-flash-message';
 import auth from '@react-native-firebase/auth';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import color from './components/Color/Color.style';
 
 function Router() {
   const [userSession, setUserSession] = useState();
@@ -41,11 +42,15 @@ function Router() {
               title: 'Odalar',
               headerShown: true,
               headerTitleAlign: 'center',
-              headerTintColor: '#ff6f00',
+              headerTintColor: color.title.color,
+              headerStyle: {
+                backgroundColor: '#ffffff',
+              },
               headerRight: () => (
                 <Icon
                   name={'logout'}
                   size={30}
+                  color={color.title.color}
                   onPress={() => {
                     auth().signOut();
                   }}></Icon>

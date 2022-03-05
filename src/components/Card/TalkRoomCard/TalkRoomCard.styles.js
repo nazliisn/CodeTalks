@@ -1,4 +1,5 @@
 import {StyleSheet, Dimensions} from 'react-native';
+import color from '../../Color/Color.style';
 
 export default StyleSheet.create({
   container: {
@@ -15,7 +16,7 @@ export default StyleSheet.create({
   },
   username: {
     fontSize: 17,
-    color: '#ff6f00',
+    color: color.title.color,
     fontWeight: 'bold',
     paddingBottom: 5,
   },

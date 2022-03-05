@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, View} from 'react-native';
 import FloatingButton from '../../components/FloatingButton';
 import RoomModal from '../../components/Modal';
 import database from '@react-native-firebase/database';
 import auth from '@react-native-firebase/auth';
 import RoomCard from '../../components/Card/RoomCard';
 import parseContentData from '../../components/utils/parseContentData';
+import styles from './Room.style';
 
 function Rooms({navigation}) {
   const [visible, setVisible] = useState(false);
@@ -48,18 +49,20 @@ function Rooms({navigation}) {
 
   return (
     <>
-      <FlatList
-        data={roomList}
-        renderItem={renderRoom}
-        numColumns={2}></FlatList>
-      <RoomModal
-        visible={visible}
-        onClose={handlePress}
-        onSend={handleSend}
-        textPlaceholder="Oda Adı.."></RoomModal>
-      <FloatingButton
-        iconName={'plus'}
-        onPressFloating={handlePress}></FloatingButton>
+      <View style={styles.container}>
+        <FlatList
+          data={roomList}
+          renderItem={renderRoom}
+          numColumns={2}></FlatList>
+        <RoomModal
+          visible={visible}
+          onClose={handlePress}
+          onSend={handleSend}
+          textPlaceholder="Oda Adı.."></RoomModal>
+        <FloatingButton
+          iconName={'plus'}
+          onPressFloating={handlePress}></FloatingButton>
+      </View>
     </>
   );
 }

@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
-import {TextInput, TouchableOpacity, View, Text} from 'react-native';
+import {View, Text} from 'react-native';
 import styles from './TalkRoomCard.styles';
 import {formatDistance, parseISO} from 'date-fns';
-function TalkRoomCard({data, roomName}) {
-  /*  const formatedData = formatDistance(parseISO(data.date), new Date(), {
+
+function TalkRoomCard({data}) {
+  /* const formatedData = formatDistance(parseISO(data.date), new Date(), {
     addSuffix: true,
   });*/
+
   return !!data.context ? (
     <View style={styles.container}>
       <View style={styles.info_container}>

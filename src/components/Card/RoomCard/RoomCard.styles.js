@@ -1,4 +1,5 @@
 import {StyleSheet, Dimensions} from 'react-native';
+import color from '../../Color/Color.style';
 
 export default StyleSheet.create({
   container: {
@@ -9,11 +10,13 @@ export default StyleSheet.create({
     borderWidth: 1 / 3,
     height: Dimensions.get('window').height / 5,
     justifyContent: 'center',
+    borderColor: color.title.color,
+    backgroundColor: '#ffffff',
   },
   text: {
     fontSize: 25,
     alignSelf: 'center',
-    color: '#ff6f00',
+    color: color.title.color,
     fontWeight: 'bold',
   },
 });

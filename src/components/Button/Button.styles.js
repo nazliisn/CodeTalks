@@ -1,10 +1,13 @@
 import {StyleSheet} from 'react-native';
+import color from '../Color/Color.style';
 
 const base_styles = StyleSheet.create({
   container: {
     margin: 10,
     padding: 5,
     borderRadius: 10,
+    borderWidth: 1 / 4,
+    borderColor: color.title.color,
   },
   name: {
     fontWeight: 'bold',
@@ -18,7 +21,7 @@ export default StyleSheet.create({
   primary: {
     container: {
       ...base_styles.container,
-      backgroundColor: '#ffa040',
+      backgroundColor: color.background.backgroundColor,
     },
     name: {
       ...base_styles.name,
@@ -33,7 +36,7 @@ export default StyleSheet.create({
     name: {
       ...base_styles.name,
 
-      color: '#ffa040',
+      color: color.title.color,
     },
   },
 });
